@@ -18,7 +18,7 @@ const getPostBySlug = async (req, res) => {
     const post = await Posts.findOne({ slug });
 
     if (!post) {
-      res.status(404).json({ message: "post not found" });
+      return res.status(404).json({ message: "post not found" });
     }
 
     res.status(200).json(post);
