@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const {
   getPosts,
   getPostBySlug,
@@ -9,6 +8,9 @@ const {
   updatePost,
   deletePost
 } = require("../controllers/postController");
+
+// middleware
+const verifyToken = require('../middlewares/auth')
 
 /**
  * @parent /posts
@@ -22,10 +24,10 @@ router.get("/:slug", getPostBySlug);
 router.get("/categories/:id", getPostsByCategory);
 
 // create a post
-router.post("/", createPost);
+router.post("/", verifyToken, createPost);
 // update a post
-router.put("/:slug", updatePost);
+router.put("/:slug", verifyToken, updatePost);
 // delete a post
-router.delete("/:slug", deletePost);
+router.delete("/:slug", verifyToken, deletePost);
 
 module.exports = router;

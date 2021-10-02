@@ -7,6 +7,9 @@ const {
   deleteCategory,
 } = require("../controllers/categoryController");
 
+// middleware
+const verifyToken = require('../middlewares/auth')
+
 /**
  * @parent /categories
  */
@@ -15,10 +18,10 @@ const {
 router.get("/", getCategories);
 
 // add a category
-router.post("/", createCategory);
+router.post("/", verifyToken, createCategory);
 // update a category
-router.put("/:id", updateCategory);
+router.put("/:id", verifyToken, updateCategory);
 // delete a category
-router.delete("/:id", deleteCategory);
+router.delete("/:id", verifyToken, deleteCategory);
 
 module.exports = router;
