@@ -85,8 +85,10 @@ const updatePost = async (req, res) => {
   const { slug: oldSlug } = req.params
   const { title, body, image, category_id, tags, status } = req.body
 
+  console.log(title, body, image, category_id, tags, status)
+
   if(!(title && body && image && category_id && tags && status)) {
-    res.status(400).json({ message: "all fields is required" })
+    return res.status(400).json({ message: "all fields is required" })
   }
 
   const updated_at = Date.now()
@@ -98,10 +100,6 @@ const updatePost = async (req, res) => {
   const currentPost = { title, body, image, slug: currentSlug, category, tags, status, updated_at }
 
   const post = await Posts.updateOne({ slug: oldSlug }, currentPost)
-
-  if(!(post.modifiedCount)) {
-    res.status(404).json({ message: "post not found" })
-  }
 
   res.status(200).json({ message: "post updated successfully" })
 };

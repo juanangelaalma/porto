@@ -4,7 +4,7 @@ import axios from 'axios'
 const App = () => {
   const [user, setUser] = useState({})
 
-  const handleSubmit = (e) => {
+  const handletSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:5000/users/register', user).then(res => {
       console.log(res)
