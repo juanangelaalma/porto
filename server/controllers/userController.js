@@ -78,7 +78,7 @@ const loginUser = async (req, res) => {
 
     // save user token
     user.token = token
-    res.status(200).json(user)
+    res.status(201).json(user)
   }catch(err) {
     console.log(err)
   }
