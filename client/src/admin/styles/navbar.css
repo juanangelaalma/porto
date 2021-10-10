@@ -1,0 +1,20 @@
+.admin .navbar {
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+}
+
+.admin button.navbar-toggler {
+  display: block !important;
+  border: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 765px) {
+  .admin .navbar {
+    width: 100% !important;
+  }
+  .admin .navbar-toggler.right {
+    float: right;
+  }
+}

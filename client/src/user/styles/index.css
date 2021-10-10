@@ -1,0 +1,346 @@
+@font-face{
+  font-family: 'Dank Mono Italic';
+  src: url('../fonts/Dank-Mono-Italic.woff');
+}
+@font-face{
+  font-family: 'Segoe UI';
+  src: url('../fonts/segoeui.woff');
+}
+@font-face{
+  font-family: 'Segoe UI Semilight';
+  src: url('../fonts/segoeuisl.woff');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #343537;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 0;
+}
+.navbar .navbar-brand {
+  color: #848787;
+  font-family: 'Dank Mono Italic';
+  font-size: 50px;
+}
+
+.navbar .navbar-brand span {
+  color: #10A499;
+}
+
+.navbar .nav-item .nav-link {
+  font-family: 'Segoe UI';
+  font-size: 22px;
+}
+
+.navbar .nav-item.active .nav-link{
+  color: #10A499;
+}
+
+.navbar .nav-item .btn {
+  background-color: #10A499;
+  border-radius: 30px;
+  font-family: 'Segoe UI';
+}
+
+.navbar .nav-item.d-flex {
+  align-items: center;
+}
+
+/* END OF NAVBAR */
+
+/* JUMBOTRON */
+.jumbotron {
+  background-color: #343537;
+  padding-top: 50px;
+}
+
+.jumbotron h1 {
+  font-family: 'Segoe UI';
+  font-size: 5.5vw;
+  animation: transitionIn 3s;
+}
+
+.jumbotron p.lead{
+  font-family: 'Segoe UI Semilight';
+  font-size: 2vw;
+  color: #848787;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  animation: transitionIn 3s;
+}
+
+.jumbotron .btn{
+  width: 20%;
+  color: #10A499;
+  border-radius: 50px;
+  background: #343537;
+  box-shadow:  4px 4px 5px rgb(38, 38, 39),
+               -1px -1px 6px rgba(197, 195, 195, 0.5);
+  animation: transitionIn 3s;
+}
+
+.jumbotron h4{
+  color: #848787;
+  animation: transitionIn 3s;
+}
+
+.jumbotron .social-media a{
+  font-size: 40px;
+  animation: transitionIn 3s;
+}
+
+.jumbotron .border{
+  padding: 30px 60px 0 60px;
+  border-color: #848787 !important;
+  width: 100%;
+  animation: transitionIn 3s;
+}
+.jumbotron .col-md-5 img.img-header{
+  width: 100%;
+  z-index: 3;
+  position: relative;
+  animation: transitionIn 3s;
+}
+/* .jumbotron section{
+  position: relative;
+} */
+.typed-cursor {
+  color: #10A499;
+  font-size: 2vw;
+}
+/* END OF JUMBOTRON */
+
+/* ABOUT */
+.container p.text-title{
+  font-family: 'Segoe UI';
+  font-size: 7vh;
+}
+
+.container img.icon-title{
+  position: absolute;
+  left: 41%;
+  z-index: -1;
+}
+
+.about .row{
+  margin-bottom: 30px;
+}
+
+.about .img-place {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about .img-place img {
+  filter: grayscale(100%);
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.about .info{
+  border-radius: 20px;
+  border: 1px solid rgba(112, 112, 112, .2);
+  background: #343537;
+  box-shadow:  6px 6px 16px rgb(38, 38, 39),
+               -1px -1px 6px rgb(197, 195, 195, .5);
+  overflow: hidden;
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.about .info .description p{
+  color: #848787;
+  font-family: 'Segoe UI';
+  font-size: 20px;
+}
+
+.about .info .description a.btn.download-cv{
+  background-color: #10A499;
+  border-radius: 30px;
+  font-family: 'Segoe UI';
+}
+
+.about .info .skill .text-left{
+  font-size: 20px;
+}
+.about .info .skill .text-right{
+  font-size: 20px;
+}
+.about .info .skill .progress{
+  background-color: #848787;
+  border-radius: 20px;
+  height: 55%;
+}
+.about .info .skill .progress .progress-bar{
+  background-color: #10A499;
+  border-radius: 20px;
+}
+
+.about .info .description a.btn.download-cv:hover {
+  background-color: #077069;
+}
+/* END OF ABOUT */
+
+/* RESUME */
+.resume .box-resume{
+  border-radius: 20px;
+  border: 1px solid rgba(112, 112, 112, .2);
+  background: #343537;
+  box-shadow:  6px 6px 16px rgb(38, 38, 39),
+               -1px -1px 6px rgb(197, 195, 195, .5);
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: '';
+  background: #10A499;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: '';
+  background: #10A499;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #10A499;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+ul.timeline > li p{
+  color: #848787;
+}
+
+/* END OF RESUME */
+
+/* CONTACT ME */
+.contact input.form-control{
+  height: 50px;
+}
+.contact form .form-control{
+  border-radius: 10px;
+  background: #343537;
+  border: 1px solid rgba(112, 112, 112, .2);
+  box-shadow: inset 10px 10px 20px #212223,
+  inset -10px -10px 20px #47484b;
+  color: rgb(177, 174, 174);
+}
+
+.contact form .btn{
+  background-color: #10A499;
+  color: #fff;
+  border-radius: 20px;
+  font-family: 'Segoe UI';
+}
+
+.contact form .btn:hover{
+  background-color: #077069;
+}
+
+#typed::before{
+  content: "I'm a ";
+}
+
+.text-green{
+  color: #10A499;
+  font-family: 'Segoe UI';
+}
+.text-gray{
+  color: #848787;
+  font-family: 'Segoe UI';
+}
+/* MOBILE PHONE */
+@media screen and (max-width: 600px) {
+  /* JUMBOTRON */
+  .jumbotron h1 {
+      font-size: 45px;
+  }
+  .jumbotron p.lead{
+      font-size: 25px;
+  }
+  .jumbotron a.btn{
+      font-size: 15px;
+      width: 25%;
+  }
+  .jumbotron h4{
+      font-size: 15px;
+  }
+  .jumbotron .social-media a{
+      font-size: 25px;
+  }
+
+  .jumbotron .border{
+      width: 100%;
+      margin: auto;
+      margin-top: 30px;
+  }
+  .typed-cursor {
+      color: #10A499;
+      font-size: 7vw;
+  }
+  /* END OF JUMBOTRON */
+
+  /* ABOUT */
+  .about .row{
+      padding: auto;
+  }
+  .about .info {
+      height: auto;
+      width: 100%;
+  }
+
+  .about .my-photo{
+      align-items: center;
+  }
+
+  .about .info .skill{
+      margin-top: 40px !important;
+  }
+}
+
+@media screen and (max-width: 770px){
+  .jumbotron .border{
+      margin: auto;
+  }
+  .jumbotron .col-md-5 .border {
+      width: 95% !important;
+      margin-top: 40px !important;
+  }
+  .skills object {
+      width: 50% !important;
+  }
+}
+
+@keyframes transitionIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

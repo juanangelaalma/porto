@@ -1,0 +1,45 @@
+.login-page .row {
+  height: 100vh;
+}
+
+.login-page .card {
+  width: 30%;
+  padding: 20px;
+  height: auto;
+}
+
+.login-page .brand {
+  color: #848787;
+  font-family: 'Dank Mono Italic';
+  font-size: 50px;
+  text-decoration: none;
+  margin: 0;
+}
+
+.login-page .card form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  color: #aeafaf;
+}
+
+.login-page .card .form-control {
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 25px;
+  color: #aeafaf;
+  outline: none;
+  border-color: #848787;
+}
+
+.login-page .btn {
+  background-color: #10A499;
+  border-radius: 15px;
+  font-family: 'Segoe UI';
+}
+
+@media screen and (max-width: 765px) {
+  .login-page .card {
+    width: 80% !important;
+  }  
+}

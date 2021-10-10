@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'CharterBT';
+  src: url('../../fonts/charter/CharterBT.woff');
+}
+.category-item {
+  list-style-type: none;
+}
+
+.category-item a {
+  text-decoration: none;
+}
+
+.category-item a:hover {
+  color: rgb(211, 211, 211);
+}
+
+.category-item a.active {
+  color: rgb(211, 211, 211) !important;
+}
+
+.card {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(211, 211, 211);
+  border-radius: 8px;
+  transition: 300ms;
+  cursor: pointer;
+  height: 320px;
+}
+
+.card:hover {
+  border: 1px solid rgb(122, 122, 122);
+}
+
+.card-title {
+  font-family: 'Segoe UI';
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.card-text {
+  font-size: 0.8em;
+  color: rgb(192, 192, 192);
+  font-family: 'Segoe UI Semilight';
+}
+
+.card-header {
+  overflow: hidden;
+  border-radius: 5px;
+  width: 100%;
+  height: 130px;
+}
+
+.card-header img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-footer {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.read-post .title {
+  color: rgb(192, 192, 192);
+  font-size: 2.7rem;
+  font-family: 'CharterBT';
+  margin-top: 20px;
+}
+
+.read-post img.header {
+  margin-top: 20px;
+  width: 100% !important;
+}
+
+.read-post .img-pofile {
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.read-post .img-pofile img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+.read-post .body {
+  color: rgb(192, 192, 192);
+  margin-top: 30px;
+  font-family: 'CharterBT';
+}
+
+.read-post .author {
+  color: rgb(192, 192, 192);
+}
+
+.read-post .created-at {
+  color: rgb(192, 192, 192);
+}
+
+@media screen and (max-width: 765px) {
+  .read-post .col-12.col-md-6.d-flex {
+    justify-content: start !important;
+  }
+  .read-post .title {
+    font-size: 2.3em;
+  }
+}

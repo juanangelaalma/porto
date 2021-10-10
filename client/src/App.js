@@ -1,26 +1,31 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Admin from "./admin/Admin";
+import RouterAdmin from "./admin/Admin";
+import Dashboard from "./admin/pages/Dashboard";
+import Blogs from "./user/pages/blogs/Blogs";
+import ReadPost from "./user/pages/blogs/ReadPost";
+
+import Home from './user/pages/Home'
+import Login from './user/pages/login/Login'
 
 const App = () => {
-  const [user, setUser] = useState({})
-
-  const handletSubmit = (e) => {
-    e.preventDefault()
-    axios.post('http://localhost:5000/users/register', user).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
-  }
-
+  const [isLogin, setIsLogin] = useState(true)
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={(e) => setUser({ ...user, avatar: e.target.files[0].name })} />
-        <button type="submit">Kirim</button>
-      </form>
-    </div>
-  )
-}
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/admin" component={RouterAdmin} exact />
 
-export default App
+        <Route path="/blogs" component={Blogs} exact />
+        <Route path="/blogs/:idPost" component={ReadPost} exact />
+        <Route path="/login" component={Login} exact />
+
+        { isLogin ? <Route path="/admin" component={Admin} /> : '' }
+      </Switch>
+    </Router>
+  );
+};
+
+
+export default App;
