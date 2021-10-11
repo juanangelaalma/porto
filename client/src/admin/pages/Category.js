@@ -1,21 +1,21 @@
-import React from "react";
-import SideBar from "../components/SideBar";
+import React from 'react'
 import RightBar from "../components/RightBar";
+import SideBar from "../components/SideBar";
 
-const Dashboard = ({ isOpenSidebar, setIsOpenSidebar }) => {
+const Category = ({ isOpenSidebar, setIsOpenSidebar }) => {
   return (
-    <div className="admin dashboard container-fluid p-0 d-flex justify-content-end">
+    <div className="admin category container-fluid p-0 d-flex justify-content-end">
       <SideBar isOpenSidebar={isOpenSidebar} />
       <RightBar
         setIsOpenSidebar={setIsOpenSidebar}
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          <h1>Dashboard</h1>
+          <h1>Category</h1>
         </div>
       </RightBar>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Category

@@ -11,7 +11,7 @@ const Blogs = ({ isOpenSidebar, setIsOpenSidebar }) => {
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti quod fuga non dignissimos ab provident, ut temporibus voluptatem modi sunt, vero quis, repellat voluptas. Quibusdam quod cupiditate modi architecto harum.
+          <h1>Blog</h1>
         </div>
       </RightBar>
     </div>
