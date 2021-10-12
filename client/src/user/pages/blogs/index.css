@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'CharterBT';
-  src: url('../../fonts/charter/CharterBT.woff');
+  src: url('../../../fonts/charter/CharterBT.woff');
 }
 .category-item {
   list-style-type: none;
