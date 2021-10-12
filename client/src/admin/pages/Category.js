@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import RightBar from "../components/RightBar";
 import SideBar from "../components/SideBar";
+import Title from "../components/Title";
 
 const Category = ({ isOpenSidebar, setIsOpenSidebar }) => {
   return (
@@ -11,11 +12,13 @@ const Category = ({ isOpenSidebar, setIsOpenSidebar }) => {
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          <h1>Category</h1>
+          <div className="w-100 mb-4">
+            <Title>Category</Title>
+          </div>
         </div>
       </RightBar>
     </div>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;

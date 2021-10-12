@@ -1,0 +1,17 @@
+.blog-list {
+  padding: 0;
+  border-bottom: 1px solid #757575;
+}
+
+.blog-list h1 {
+  font-size: 1.7em;
+}
+
+.blog-list p {
+  font-size: 1.2em;
+  color: #757575;
+}
+
+.option {
+  width: 100%;
+}

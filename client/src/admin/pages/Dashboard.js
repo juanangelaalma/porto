@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../components/SideBar";
 import RightBar from "../components/RightBar";
+import Title from "../components/Title";
 
 const Dashboard = ({ isOpenSidebar, setIsOpenSidebar }) => {
   return (
@@ -11,7 +12,9 @@ const Dashboard = ({ isOpenSidebar, setIsOpenSidebar }) => {
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          <h1>Dashboard</h1>
+          <div className="w-100 mb-4">
+            <Title>Dashbooard</Title>
+          </div>
         </div>
       </RightBar>
     </div>

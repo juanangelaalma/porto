@@ -1,9 +1,9 @@
 .rightbar {
   width: 80%;
   transition: 0.5s;
-  background-color: antiquewhite;
   display: flex;
   padding-top: 10vh;
+  background-color: #FFF;
 }
 .w-80 {
   width: 80% !important;

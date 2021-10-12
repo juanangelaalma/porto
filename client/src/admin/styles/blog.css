@@ -1,0 +1,59 @@
+.blog .status ul {
+  border-bottom: 1px solid #757575;
+}
+
+.blog .status li {
+  list-style: none;
+  margin-right: 2em;
+  cursor: pointer;
+  transition: 500ms;
+  color: #757575;
+  font-family: 'Segoe UI';
+  padding-bottom: 7px;
+}
+
+.blog .status li:hover {
+  color: #343537;
+}
+
+.blog .status li.active {
+  border-bottom: 1px solid #343537;
+  color: #343537;
+}
+
+.option i {
+  cursor: pointer;
+  color: #8d8d8d;
+  font-size: 30px;
+}
+
+.option .menu {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.option .menu ul {
+  background-color: #757575;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  border-radius: 2px;
+  background-color: #FFF;
+  border: 1px solid #757575;
+  padding: 0;
+  z-index: 3;
+}
+
+.option .menu li {
+  padding: 5px 10px;
+  list-style: none;
+  width: 100%;
+  color: #666666;
+  cursor: pointer;
+}
+
+.option .menu li:hover {
+  background-color: #d4d4d4;
+}

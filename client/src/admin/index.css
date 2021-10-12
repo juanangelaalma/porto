@@ -1,0 +1,12 @@
+@font-face{
+  font-family: 'Dank Mono Italic';
+  src: url('../fonts/Dank-Mono-Italic.woff');
+}
+@font-face{
+  font-family: 'Segoe UI';
+  src: url('../fonts/segoeui.woff');
+}
+@font-face{
+  font-family: 'Segoe UI Semilight';
+  src: url('../fonts/segoeuisl.woff');
+}
