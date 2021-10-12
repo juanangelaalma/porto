@@ -17,19 +17,40 @@ const Blogs = ({ isOpenSidebar, setIsOpenSidebar }) => {
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          <div className="w-100 mb-4">
+          <div className="col-md-12 d-flex justify-content-between mb-4">
             <Title>Your Blog</Title>
+            <button className="btn btn-create-post">
+              Create a Post
+            </button>
           </div>
           <div className="status col-md-12 p-0">
             <ul className="d-flex p-0 justify-content-start">
-              <li className={status == 'draft' ? 'active' : ''} onClick={() => setStatus("draft")}>Draft</li>
-              <li className={status == 'publish' ? 'active' : ''} onClick={() => setStatus("publish")}>Publish</li>
+              <li
+                className={status == "draft" ? "active" : ""}
+                onClick={() => setStatus("draft")}
+              >
+                Draft
+              </li>
+              <li
+                className={status == "publish" ? "active" : ""}
+                onClick={() => setStatus("publish")}
+              >
+                Publish
+              </li>
             </ul>
           </div>
-          <BlogList option={status == 'publish' ? <PublishOption /> : <DraftOption />} />
-          <BlogList option={status == 'publish' ? <PublishOption /> : <DraftOption />} />
-          <BlogList option={status == 'publish' ? <PublishOption /> : <DraftOption />} />
-          <BlogList option={status == 'publish' ? <PublishOption /> : <DraftOption />} />
+          <BlogList
+            option={status == "publish" ? <PublishOption /> : <DraftOption />}
+          />
+          <BlogList
+            option={status == "publish" ? <PublishOption /> : <DraftOption />}
+          />
+          <BlogList
+            option={status == "publish" ? <PublishOption /> : <DraftOption />}
+          />
+          <BlogList
+            option={status == "publish" ? <PublishOption /> : <DraftOption />}
+          />
         </div>
       </RightBar>
     </div>
@@ -66,7 +87,8 @@ const PublishOption = () => {
     <div className="d-flex align-item-center position-relative">
       <p className="p-0 m-0 mr-2">Published on Aug 18</p>
       <div className="icon m-0 p-0 position-relative d-flex align-items-center">
-        <i style={{ fontSize:  '1.1em'}}
+        <i
+          style={{ fontSize: "1.1em" }}
           onClick={() => setIsOpenDropDown(!isOpenDropdown)}
           className="fas fa-ellipsis-h"
         ></i>

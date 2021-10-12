@@ -57,3 +57,16 @@
 .option .menu li:hover {
   background-color: #d4d4d4;
 }
+
+.btn-create-post {
+  border: 1px solid #10A499;
+  border-radius: 30px;
+  font-family: 'Segoe UI';
+  padding: 0 20px;
+  color: #10A499;
+}
+
+.btn-create-post:hover {
+  background-color: #10A499;
+  color: #FFF;
+}
