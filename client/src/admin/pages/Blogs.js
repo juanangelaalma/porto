@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Route, Switch } from "react-router";
+import { Link } from "react-router-dom";
 import BlogList from "../components/BlogList";
 import RightBar from "../components/RightBar";
 import SideBar from "../components/SideBar";
-import TextEditor from "../components/TextEditor";
 
 import Title from "../components/Title";
 import "../styles/blog.css";
@@ -17,11 +18,11 @@ const Blogs = ({ isOpenSidebar, setIsOpenSidebar }) => {
         isOpenSidebar={isOpenSidebar}
       >
         <div className="row">
-          <div className="col-md-12 d-flex justify-content-between mb-4">
+          <div className="col-md-12 p-0 d-flex justify-content-between mb-4">
             <Title>Your Blog</Title>
-            <button className="btn btn-create-post">
+            <Link to="/admin/blog/create" className="btn h-75 p-2 btn-create-post">
               Create a Post
-            </button>
+            </Link>
           </div>
           <div className="status col-md-12 p-0">
             <ul className="d-flex p-0 justify-content-start">

@@ -1,0 +1,43 @@
+.category ul {
+  padding: 0;
+}
+.admin .category ul li {
+  list-style: none;
+  width: 100%;
+  background-color: #fff;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.admin .category-list ul {
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.admin .category-list ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.admin .category-list ul::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  width: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+@media screen and (max-width: 756px) {
+  .admin .category .form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    padding: 20px;
+  }
+
+  .admin .category .category-list ul {
+    height: 50vh;
+  }
+}

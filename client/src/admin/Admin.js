@@ -6,25 +6,36 @@ import Category from "./pages/Category";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 
+import "./index.css";
+import CreatePost from "./pages/blog/CreatePost";
+
 const Admin = () => {
   const [isOpenSidebar, setIsOpenSidebar] = useState(true);
 
-  const sidebar = { isOpenSidebar, setIsOpenSidebar }
+  const sidebar = { isOpenSidebar, setIsOpenSidebar };
 
   return (
     <Switch>
+
       <Route path="/admin/dashboard">
         <Dashboard {...sidebar} />
       </Route>
-      <Route path="/admin/blog">
-        <Blogs {...sidebar}  />
+
+      <Route path="/admin/blog" exact>
+        <Blogs {...sidebar} />
+        <Route path="/admin/blog/create">
+          <CreatePost />
+        </Route>
       </Route>
+
       <Route path="/admin/category">
-        <Category {...sidebar}  />
+        <Category {...sidebar} />
       </Route>
+
       <Route path="/admin/profile">
-        <Profile {...sidebar}  />
+        <Profile {...sidebar} />
       </Route>
+      
     </Switch>
   );
 };

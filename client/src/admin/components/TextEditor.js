@@ -14,7 +14,7 @@ export default () => {
       StarterKit,
     ],
     content: `
-      <p>
+      <p className="text-white">
         Try to select <em>this text</em> to see what we call the bubble menu.
       </p>
       <p>

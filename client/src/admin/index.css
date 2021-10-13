@@ -10,3 +10,27 @@
   font-family: 'Segoe UI Semilight';
   src: url('../fonts/segoeuisl.woff');
 }
+
+.btn-green {
+  border: 1px solid #10A499;
+  border-radius: 15px;
+  font-family: 'Segoe UI';
+  padding: 0 20px;
+  color: #10A499;
+}
+
+.btn-green:hover  {
+  background-color: #10A499;
+  color: #FFF;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
