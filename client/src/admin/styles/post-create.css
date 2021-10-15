@@ -1,0 +1,15 @@
+.textarea-auto-grow {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 50px;
+  resize: none;
+  outline: none;
+  font-size: 3em;
+}
+.textarea-auto-grow[contenteditable]:empty::before {
+  content: "Title";
+  color: gray;
+}
