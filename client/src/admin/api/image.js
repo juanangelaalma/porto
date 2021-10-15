@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { API_URL } from "../constants";
+import { API_URL } from "../../constants";
 
 const uploadImage = (formData) =>
   axios.post(API_URL + "/files/upload", formData, {

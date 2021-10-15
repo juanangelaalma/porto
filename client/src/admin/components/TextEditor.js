@@ -10,7 +10,7 @@ import Image from "@tiptap/extension-image";
 import "../styles/text-editor.scss";
 
 import { uploadImage } from "../api/image";
-import { API_URL } from "../constants";
+import { API_URL } from "../../constants";
 
 export default ({ content, setContent }) => {
   const editor = useEditor({
