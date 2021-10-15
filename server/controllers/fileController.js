@@ -1,58 +1,56 @@
-const formidable = require('formidable')
-const fs = require('fs')
-const bcrypt = require('bcryptjs')
-const path = require('path')
+const formidable = require("formidable");
+const fs = require("fs");
+const bcrypt = require("bcryptjs");
+const path = require("path");
 
 /**
- * 
- * @param {*} req 
- * @param {*} res 
+ *
+ * @param {*} req
+ * @param {*} res
  * @returns response
  */
 const uploadFile = async (req, res) => {
-  const form = new formidable.IncomingForm()
-  
-  form.parse(req, async (err, fields, files) => {
-    const oldPath = files.avatar.path
+  const form = new formidable.IncomingForm();
 
-    const fileName = files.avatar.name
+  try {
+    form.parse(req, async (err, fields, files) => {
+      const fileName = files.thumbnail.name;
+      const newFileName = Date.now() + path.extname(fileName);
+      const oldPath = files.thumbnail.path
+      const newPath = "public/images/" + newFileName;
 
-    const newFile = await bcrypt.hash(fileName, 10)
-  
-    const newFileName = newFile + Date.now() + path.extname(fileName)
-
-    const newPath = 'public/images/' + newFileName
-
-    fs.rename(oldPath, newPath, (err) => {
-      if(err) throw err
-      res.status(201).json({
-        status: 'success',
-        path: '/images/' + newFileName
-      })
-    })
-
-  })
-}
+      fs.rename(oldPath, newPath, (err) => {
+        if (err) throw err;
+        res.status(201).json({
+          status: "success",
+          path: "/images/" + newFileName,
+        });
+      });
+    });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
 
 /**
- * 
- * @param {*} req 
- * @param {*} res 
+ *
+ * @param {*} req
+ * @param {*} res
  * @returns file image
  */
 const getFile = (req, res) => {
-  const { name: fileName } = req.params
+  const { name: fileName } = req.params;
 
   const options = {
-    root: 'public/images/',
-    dotfiles: 'allow',
+    root: "public/images/",
+    dotfiles: "allow",
     headers: {
-      'x-timestamp': Date.now(),
-      'x-sent': true
-    }
-  }
+      "x-timestamp": Date.now(),
+      "x-sent": true,
+    },
+  };
 
-  res.sendFile(fileName, options)
-}
+  res.sendFile(fileName, options);
+};
 
-module.exports = { uploadFile, getFile }
+module.exports = { uploadFile, getFile };

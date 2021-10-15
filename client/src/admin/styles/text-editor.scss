@@ -9,6 +9,12 @@
   }
   
   outline: none;
+
+  color: #C0C0C0;
+
+  img {
+    width: 100%;
+  }
 }
 
 .bubble-menu {
@@ -35,7 +41,7 @@
 
 .floating-menu {
   display: flex;
-  background-color: #0D0D0D10;
+  background-color: #FFF;
   padding: 0.2rem;
   border-radius: 0.5rem;
 
@@ -47,6 +53,25 @@
     padding: 0 0.2rem;
     opacity: 0.6;
 
+    margin: 0 3px;
+
+    &:hover,
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  label {
+    border: none;
+    background: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.6;
+
+    margin: 0 3px;
+    cursor: pointer;
+
+    color: #404142;
     &:hover,
     &.is-active {
       opacity: 1;

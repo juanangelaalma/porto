@@ -19,6 +19,18 @@
   color: #10A499;
 }
 
+.btn-publish {
+  border: 1px solid #10A499;
+  border-radius: 15px;
+  font-family: 'Segoe UI';
+  padding: 0 20px;
+  color: #FFF;
+}
+
+.btn-publish:hover {
+  color: rgb(214, 214, 214);
+}
+
 .btn-green:hover  {
   background-color: #10A499;
   color: #FFF;

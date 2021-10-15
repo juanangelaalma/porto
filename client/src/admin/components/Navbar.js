@@ -3,7 +3,7 @@ import '../styles/navbar.css'
 
 const Navbar = ({ children, isOpenSidebar, setIsOpenSidebar }) => {
   return (
-    <nav className="navbar navbar-expand-lg p-0 navbar-dark bg-dark position-fixed" style={{ width: isOpenSidebar ? '80%' : '100%' }}>
+    <nav className="navbar navbar-expand-lg p-0 navbar-dark position-fixed" style={{ width: isOpenSidebar ? '80%' : '100%' }}>
       <button
         className={ isOpenSidebar ? "navbar-toggler navbar-toggler-right" : "navbar-toggler" }
         type="button"
