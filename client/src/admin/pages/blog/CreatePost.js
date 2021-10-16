@@ -17,7 +17,7 @@ const CreatePost = () => {
   }
   return (
     <div className="container-fluid p-0">
-      <Navbar>
+      <Navbar menu={false}>
         <li className="nav-item py-3 pr-2">
           <button className="btn btn-publish">Draft</button>
         </li>
