@@ -11,6 +11,21 @@
   padding: 10px;
 }
 
+.navbar-toggler.custom-navbar-toggler{
+  border: none;
+  outline: none;
+}
+
+.custom-navbar-toggler span {
+  font-size: 1.4em;
+  color: #49A599;
+  transition: 1000ms;
+}
+
+.custom-navbar-toggler span.vertical {
+  transform: rotate(360deg);
+}
+
 @media screen and (max-width: 765px) {
   .admin .navbar {
     width: 100% !important;
