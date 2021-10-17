@@ -60,8 +60,6 @@ const loginUser = async (req, res) => {
     // find user by email
     const user = await Users.findOne({ email })
 
-    console.log(user)
-
     if(!(user && (await bcrypt.compare(password, user.password)))) {
       res.status(400).json({
         message: "invalid Cradentials"

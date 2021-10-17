@@ -43,7 +43,7 @@ const getPostsByCategory = async (req, res) => {
 
 const createPost = async (req, res) => {
   try {
-    const { title, body, image, category: currentCategory, tags } = req.body;
+    const { title, body, image, category: currentCategory, tags, status } = req.body;
 
     const oldPost = await Posts.findOne({ title });
     console.log(oldPost);
@@ -53,7 +53,7 @@ const createPost = async (req, res) => {
     }
 
     const slug = slugify(title);
-    const status = "drafted";
+    const currentStatus = status ? status : 'drafted';
     const created_at = Date.now();
     const updated_at = created_at;
     const category = new Categories(currentCategory);
@@ -65,7 +65,7 @@ const createPost = async (req, res) => {
       slug,
       category,
       tags,
-      status,
+      status: currentStatus,
       created_at,
       updated_at,
     };
