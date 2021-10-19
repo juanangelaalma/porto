@@ -1,0 +1,9 @@
+.option a {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #666666;
+}
+
+.option a:hover {
+  background-color: #d4d4d4;
+}

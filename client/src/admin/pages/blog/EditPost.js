@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { ToastContainer } from "react-toastify";
-
+import { getPostsBySlug } from "../../../services/post.service";
 import TextEditor from "../../components/TextEditor";
 import Navbar from "../../components/Navbar";
-import "../../styles/post-create.css";
+
 import { getAllCategories } from "../../../services/category.service";
 import { addPost } from "../../../services/post.service";
 import { setMessage } from "../../../actions/message";
 import { notifySuccess } from "../../../common/toast";
+import { ToastContainer } from "react-toastify";
 
-const CreatePost = () => {
-  const [content, setContent] = useState({
-    title: "",
-    image: "",
-    body: "",
-  });
+const EditPost = () => {
+  const { status, slug } = useParams();
+  const [post, setPost] = useState({});
 
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -23,6 +21,19 @@ const CreatePost = () => {
 
   const dispatch = useDispatch();
   const message = useSelector((state) => state.message);
+
+  console.log(post)
+
+
+  const getBySlug = async (slug) => {
+    try {
+      const res = await getPostsBySlug(slug);
+      const { data } = res;
+      setPost(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const getCategories = async () => {
     const response = await getAllCategories();
@@ -40,28 +51,32 @@ const CreatePost = () => {
   };
 
   const handleSubmit = (e) => {
-    const currentStatus = e.target.getAttribute("status");
-    const currentCategory = categories.filter(
-      (category) => category._id === selectedCategory
-    );
-    const newPost = {
-      ...content,
-      category: { ...currentCategory[0] },
-      tags: selectedTags.split(","),
-      status: currentStatus,
-    };
-    addPost(newPost)
-      .then((res) => {
-        dispatch(setMessage(currentStatus + " successfully"))
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // const currentStatus = e.target.getAttribute("status");
+    // const currentCategory = categories.filter(
+    //   (category) => category._id === selectedCategory
+    // );
+    // const newPost = {
+    //   ...content,
+    //   category: { ...currentCategory[0] },
+    //   tags: selectedTags.split(","),
+    //   status: currentStatus,
+    // };
+    // addPost(newPost)
+    //   .then((res) => {
+    //     dispatch(setMessage(currentStatus + " successfully"))
+    //     console.log(res)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   useEffect(() => {
     getCategories();
+  }, []);
+
+  useEffect(() => {
+    getBySlug(slug);
   }, []);
 
   useEffect(() => {
@@ -74,7 +89,11 @@ const CreatePost = () => {
     <div className="container-fluid p-0 create-post">
       <Navbar menu={false}>
         <li className="nav-item py-3 pr-2">
-          <button status="drafted" onClick={handleSubmit} className="btn btn-publish">
+          <button
+            status="drafted"
+            onClick={handleSubmit}
+            className="btn btn-publish"
+          >
             Draft
           </button>
         </li>
@@ -124,14 +143,14 @@ const CreatePost = () => {
           <p>
             <span
               onInput={(e) =>
-                setContent({ ...content, title: e.target.innerHTML })
+                setPost({ ...post, title: e.target.innerHTML })
               }
               class="textarea-auto-grow"
               role="textbox"
               contentEditable
             ></span>
           </p>
-          <TextEditor content={content} setContent={setContent} />
+          <TextEditor content={post} setContent={setPost} />
         </div>
       </div>
       <ToastContainer
@@ -149,4 +168,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default EditPost;

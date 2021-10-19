@@ -12,12 +12,15 @@ import "../styles/text-editor.scss";
 import { uploadImage } from "../api/image";
 import { API_URL } from "../../constants";
 
+
 export default ({ content, setContent }) => {
   const editor = useEditor({
-    extensions: [StarterKit, Image]
+    extensions: [StarterKit, Image],
+    content: '',
   });
 
   const HtmlContent = editor?.getHTML();
+
 
   useEffect(() => {
     setContent({ ...content, body: HtmlContent ? HtmlContent : "" });
@@ -25,8 +28,8 @@ export default ({ content, setContent }) => {
 
   const addImage = (path) => {
     const url = API_URL + path;
-    if(!(content.thumbnail)) {
-      setContent({ ...content, thumbnail: url })
+    if (!content.image) {
+      setContent({ ...content, image: url });
     }
     editor.chain().focus().setImage({ src: url }).run();
   };

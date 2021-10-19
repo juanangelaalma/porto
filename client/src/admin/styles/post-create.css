@@ -13,3 +13,7 @@
   content: "Title";
   color: gray;
 }
+
+.create-post .row .col-md-3 {
+  height: 100vh;
+}
