@@ -46,7 +46,6 @@ const createPost = async (req, res) => {
     const { title, body, image, category: currentCategory, tags, status } = req.body;
 
     const oldPost = await Posts.findOne({ title });
-    console.log(oldPost);
 
     if (oldPost) {
       return res.status(401).json("title is use by another post");
