@@ -19,7 +19,7 @@ const createCategory = async (req, res) => {
       return res.status(400).json({ message: 'All fields is required' })
     }
 
-    const _id = await bcrypt.hash(Date.now() + name, 5)
+    const _id = Date.now() + name
 
     const category = new Categories({ _id, name })
 
@@ -46,6 +46,8 @@ const updateCategory = async (req, res) => {
 
 const deleteCategory = async (req, res) => {
   const { id: _id } = req.params
+
+  console.log("id: ", _id)
 
   const category = await Categories.deleteOne({ _id })
 
