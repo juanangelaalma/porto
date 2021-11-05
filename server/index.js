@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const port = 5000 || process.env.PORT;
-const CONNECTION_URL = process.env.CONNECTION_URL;
+const DATABASE_URI = process.env.DATABASE_URI;
 const verifyToken = require('./middlewares/auth')
 
 // routing
@@ -34,9 +34,9 @@ app.get("/", verifyToken, (req, res) => {
 
 // database connection
 mongoose
-  .connect(CONNECTION_URL)
+  .connect(DATABASE_URI)
   .then(() => {
-    console.log('Database connection at', CONNECTION_URL)
+    console.log('Database connection at', DATABASE_URI)
     app.listen(port, () => console.log("Server running at", port))
   })
   .catch((err) => console.log(err));
