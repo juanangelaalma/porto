@@ -13,13 +13,13 @@ const Contact = () => {
           <img className="icon-title" src="/assets/icons/rectangles.svg" />
           <p className="text-center text-white text-title">Contact me</p>
           <p className="text-center text-green">Let's talk about everything</p>
-          <p className="text-center text-gray"> Don't like forms? Send me an <a href>email.</a></p>
+          <p className="text-center text-gray"> Don't like forms? Send me an <a target="__blank" href="https://mail.google.com/">email.</a></p>
           <div className="row justify-content-center">
             <div className="col-md-8">
               <form>
                 <div className="row">
                   <div className="col-md-6 mb-5">
-                    <input type="text" value={message.first_name} onChange={(e) => setMessage({ ...message, first_name: e.target.value })} className="form-control" placeholder="*first name" />
+                    <input type="text" value={message.first_name} onChange={(e) => setMessage({ ...message, first_name: e.target.value })} className="form-control" placeholder="*full name" />
                   </div>
                   <div className="col-md-6 mb-5">
                     <input type="email" value={message.email} onChange={(e) => setMessage({ ...message, email: e.target.value })} className="form-control" placeholder="*email" />

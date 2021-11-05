@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Image, Shimmer } from "react-shimmer";
-import { fetchPostById } from "../../api/posts";
+import { fetchPostById } from "../../services/posts.service";
 
 import NavbarBlog from "../../components/blogs/NavbarBlog";
 
@@ -12,12 +11,15 @@ const ReadPost = () => {
   useEffect(() => {
     fetchPostById(idPost)
       .then((res) => {
+        console.log(res)
         setPost(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  console.log(post)
 
   const { title, body } = post;
   return (
@@ -38,7 +40,7 @@ const ReadPost = () => {
                   </div>
                 </div>
                 <div className="col-8">
-                  <div className="row">
+                  <div className="row pl-2">
                     <div className="col-12">
                       <h5 className="m-0 author">Juan Angela Alma</h5>
                     </div>
@@ -89,8 +91,7 @@ const ReadPost = () => {
               </div>
             </div>
           </div>
-          <img className="header" src="https://picsum.photos/300/150" />
-          <div className="body">{body}</div>
+          <div className="body" dangerouslySetInnerHTML={{ __html: body }}></div>
         </div>
       </div>
     </div>

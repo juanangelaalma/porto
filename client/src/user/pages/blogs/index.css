@@ -100,6 +100,10 @@
   color: rgb(192, 192, 192);
 }
 
+.read-post .body img {
+  width: 100%;
+}
+
 @media screen and (max-width: 765px) {
   .read-post .col-12.col-md-6.d-flex {
     justify-content: start !important;

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Redirect, useHistory } from "react-router";
 import CardPost from "./CardPost";
 
-const Posts = ({ posts }) => {
+const Posts = ({ idCategory, posts }) => {
+  const currentPost = idCategory ? posts.filter(post => post.category._id == idCategory) : posts
   return (
     <div className="row">
-      { posts.map(post => {
+      { currentPost.map(post => {
         return <CardPost post={post} />
       }) }
     </div>
