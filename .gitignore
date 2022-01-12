@@ -1,2 +1,4 @@
 index.html
 register.html
+server/node_modules
+client/node_modules

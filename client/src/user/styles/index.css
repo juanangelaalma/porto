@@ -321,6 +321,9 @@ ul.timeline > li p{
   .about .info .skill{
       margin-top: 40px !important;
   }
+  .resume .school-name {
+    font-size: 1.5em;
+  }
 }
 
 @media screen and (max-width: 770px){

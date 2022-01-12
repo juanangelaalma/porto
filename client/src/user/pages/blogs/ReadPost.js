@@ -27,7 +27,7 @@ const ReadPost = () => {
       <NavbarBlog />
       <div className="row justify-content-center">
         <div className="col-md-8 col-12">
-          <h1 className="title">{title}</h1>
+          <h1 className="title" dangerouslySetInnerHTML={{ __html: title }}></h1>
           <div className="row">
             <div className="col-12 col-md-6 my-2">
               <div className="row">
