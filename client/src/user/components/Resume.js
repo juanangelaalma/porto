@@ -16,22 +16,22 @@ const Resume = () => {
                       <ul className="timeline">
                         <li className="ml-4">
                           <p className="m-0"><i className="fa fa-graduation-cap" /> 2020 - present</p>
-                          <h1 className="text-white">University</h1>
+                          <h1 className="school-name text-white">University</h1>
                           <p>University of Surabaya</p>
                         </li>
                         <li className="ml-4">
                           <p className="m-0"><i className="fa fa-graduation-cap" /> 2017 - 2020</p>
-                          <h1 className="text-white">Vocational High School</h1>
+                          <h1 className="school-name text-white">Vocational High School</h1>
                           <p>SMK Negeri 1 Boyolangu</p>
                         </li>
                         <li className="ml-4">
                           <p className="m-0"><i className="fa fa-graduation-cap" /> 2014 - 2017</p>
-                          <h1 className="text-white">Junior High School</h1>
+                          <h1 className="school-name text-white">Junior High School</h1>
                           <p>SMP Negeri 4 Tulungagung</p>
                         </li>
                         <li className="ml-4">
                           <p className="m-0"><i className="fa fa-graduation-cap" /> 2008 - 2014</p>
-                          <h1 className="text-white">Elementary School</h1>
+                          <h1 className="school-name text-white">Elementary School</h1>
                           <p>SD Negeri 2 Kauman</p>
                         </li>
                       </ul>

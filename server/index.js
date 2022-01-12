@@ -28,7 +28,7 @@ app.use('/files', uploadFileRoute)
 app.use('/categories', categoriesRoute)
 app.use('/posts', postsRoute)
 
-app.get("/", verifyToken, (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
